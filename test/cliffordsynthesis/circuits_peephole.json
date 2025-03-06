@@ -1,0 +1,59 @@
+[
+    {
+        "description": "x_x_t_x_x",
+        "num_qubits": 1,
+        "initial_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];x q;x q;t q;x q;x q;\n",
+        "expected_minimal_depth": 1,
+        "expected_minimal_gates": 1,
+        "expected_output_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];t q;\n"
+    },
+    {
+        "description": "t",
+        "num_qubits": 1,
+        "initial_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];t q;\n",
+        "expected_minimal_depth": 1,
+        "expected_minimal_gates": 1,
+        "expected_output_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];t q;\n"
+
+    },
+    {
+        "description": "cx_cx_t0_cx_cx",
+        "num_qubits": 2,
+        "initial_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[2];cx q[0],q[1];cx q[0],q[1];t q[0];cx q[0],q[1];cx q[0],q[1];\n",
+        "expected_minimal_depth": 1,
+        "expected_minimal_gates": 1,
+        "expected_output_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[2];t q[0];\n"
+    },
+    {
+        "description": "t_t_t_t_t_t_t_t",
+        "num_qubits": 1,
+        "initial_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];t q;t q;t q;t q;t q;t q;t q;t q;\n",
+        "expected_minimal_depth": 0,
+        "expected_minimal_gates": 0,
+        "expected_output_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];\n"
+    },
+    {
+        "description": "t_tdg",
+        "num_qubits": 1,
+        "initial_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];t q;tdg q;\n",
+        "expected_minimal_depth": 0,
+        "expected_minimal_gates": 0,
+        "expected_output_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[1];\n"
+    },
+    {
+        "description": "cx1_2_t0_t0_cx1_2",
+        "num_qubits": 3,
+        "initial_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[3];cx q[1],q[2];t q[0];t q[0];cx q[1],q[2];\n",
+        "expected_minimal_depth": 2,
+        "expected_minimal_gates": 2,
+        "expected_output_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[3];t q[0];t q[0];\n"
+    },
+    {
+        "description": "cx0_1_t0_cx0_1_t0",
+        "num_qubits": 2,
+        "initial_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[2];cx q[0],q[1];t q[0];cx q[0],q[1];t q[0];\n",
+        "expected_minimal_depth": 2,
+        "expected_minimal_gates": 2,
+        "expected_output_circuit": "OPENQASM 2.0;include \"qelib1.inc\";qreg q[2];t q[0];t q[0];\n"
+    }
+]
